@@ -1,0 +1,36 @@
+/* テーブルのコンテナをスクロール可能にする */
+.table-container {
+  overflow-x: auto;
+  display: block;
+  white-space: nowrap;
+  max-height: 95vh; /* 必要に応じて調整 */
+}
+
+/* テーブルの幅を固定 */
+.table-container table {
+  color: black;
+  width: 100%;
+  border-collapse: collapse;
+  position: relative;
+}
+
+.centered-header {
+  text-align: center;
+}
+
+.table-container th, .table-container td {
+  border: 1px solid;
+  padding: 8px;
+  width: 100px; /* ここでセルの幅を固定 */
+  height: 40px; /* ここでセルの高さを固定 */
+  overflow: hidden; /* セル内のコンテンツがはみ出した場合、非表示にする */
+  text-overflow: ellipsis; /* セル内のテキストがはみ出した場合、省略記号を表示 */
+  white-space: nowrap; /* セル内のテキストの折り返しを禁止 */
+}
+
+.sticky-column {
+  position: sticky;
+  left: 0;
+  background-color: white; /* または任意の背景色 */
+  z-index: 2;
+}
