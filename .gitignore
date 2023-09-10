@@ -1,5 +1,7 @@
 .cookie-store
 data/
 scores/
+html/
 *.txt
 *.json
+ranking.csv
