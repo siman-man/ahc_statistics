@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>AHC027 (Navier_Boltzmann)</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css"
+    />
+    <link rel="stylesheet" type="text/css" href="../../styles.css" />
+  </head>
+  <body>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th rowspan="2" class="centered-header"></th>
+            <th colspan="21" class="centered-header">w / N (Ratio of w and N)</th>
+          </tr>
+          <tr>
+            <th colspan="3" class="centered-header">[0, 0.25)</th>
+            <th colspan="3" class="centered-header">[0.25, 0.5)</th>
+            <th colspan="3" class="centered-header">[0.5, 0.75)</th>
+            <th colspan="3" class="centered-header">[0.75, 1.0]</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th class="centered-header">N (Size of grid)</th>
+            <th class="centered-header">Score</th>
+            <th class="centered-header">Rank</th>
+            <th class="centered-header">Cases</th>
+            <th class="centered-header">Score</th>
+            <th class="centered-header">Rank</th>
+            <th class="centered-header">Cases</th>
+            <th class="centered-header">Score</th>
+            <th class="centered-header">Rank</th>
+            <th class="centered-header">Cases</th>
+            <th class="centered-header">Score</th>
+            <th class="centered-header">Rank</th>
+            <th class="centered-header">Cases</th>
+          </tr>
+
+          <tr>
+            <th class="centered-header">20</th>
+
+
+            <td>6,940,421,139</td>
+            <td>580</td>
+            <td>13</td>
+
+            <td>13,367,024,421</td>
+            <td>579</td>
+            <td>26</td>
+
+            <td>8,728,478,747</td>
+            <td>575</td>
+            <td>19</td>
+
+            <td>14,074,311,126</td>
+            <td>596</td>
+            <td>30</td>
+
+          </tr>
+
+          <tr>
+            <th class="centered-header">21</th>
+
+
+            <td>13,174,705,395</td>
+            <td>570</td>
+            <td>24</td>
+
+            <td>14,332,417,406</td>
+            <td>569</td>
+            <td>28</td>
+
+            <td>9,584,060,215</td>
+            <td>572</td>
+            <td>20</td>
+
+            <td>13,258,719,509</td>
+            <td>565</td>
+            <td>27</td>
+
+          </tr>
+
+          <tr>
+            <th class="centered-header">22</th>
+
+
+            <td>11,166,667,404</td>
+            <td>572</td>
+            <td>22</td>
+
+            <td>10,690,909,730</td>
+            <td>588</td>
+            <td>21</td>
+
+            <td>12,350,371,729</td>
+            <td>595</td>
+            <td>27</td>
+
+            <td>8,405,655,984</td>
+            <td>576</td>
+            <td>18</td>
+
+          </tr>
+
+          <tr>
+            <th class="centered-header">23</th>
+
+
+            <td>12,139,234,561</td>
+            <td>568</td>
+            <td>23</td>
+
+            <td>14,869,870,345</td>
+            <td>558</td>
+            <td>29</td>
+
+            <td>12,195,492,135</td>
+            <td>576</td>
+            <td>26</td>
+
+            <td>12,120,987,818</td>
+            <td>545</td>
+            <td>26</td>
+
+          </tr>
+
+          <tr>
+            <th class="centered-header">24</th>
+
+
+            <td>11,694,725,182</td>
+            <td>564</td>
+            <td>22</td>
+
+            <td>12,129,732,183</td>
+            <td>597</td>
+            <td>26</td>
+
+            <td>10,827,893,785</td>
+            <td>627</td>
+            <td>24</td>
+
+            <td>17,020,742,824</td>
+            <td>557</td>
+            <td>38</td>
+
+          </tr>
+
+          <tr>
+            <th class="centered-header">25</th>
+
+
+            <td>13,920,890,976</td>
+            <td>560</td>
+            <td>26</td>
+
+            <td>14,796,383,993</td>
+            <td>560</td>
+            <td>30</td>
+
+            <td>9,907,111,667</td>
+            <td>563</td>
+            <td>22</td>
+
+            <td>10,462,396,386</td>
+            <td>552</td>
+            <td>22</td>
+
+          </tr>
+
+          <tr>
+            <th class="centered-header">26</th>
+
+
+            <td>11,351,264,778</td>
+            <td>538</td>
+            <td>21</td>
+
+            <td>8,179,614,733</td>
+            <td>574</td>
+            <td>18</td>
+
+            <td>9,217,097,159</td>
+            <td>556</td>
+            <td>19</td>
+
+            <td>15,581,568,299</td>
+            <td>571</td>
+            <td>34</td>
+
+          </tr>
+
+          <tr>
+            <th class="centered-header">27</th>
+
+
+            <td>14,704,486,454</td>
+            <td>570</td>
+            <td>27</td>
+
+            <td>10,466,166,221</td>
+            <td>553</td>
+            <td>20</td>
+
+            <td>11,622,825,990</td>
+            <td>556</td>
+            <td>24</td>
+
+            <td>12,274,513,729</td>
+            <td>582</td>
+            <td>27</td>
+
+          </tr>
+
+          <tr>
+            <th class="centered-header">28</th>
+
+
+            <td>7,229,916,490</td>
+            <td>564</td>
+            <td>14</td>
+
+            <td>11,513,442,798</td>
+            <td>557</td>
+            <td>24</td>
+
+            <td>10,297,129,333</td>
+            <td>573</td>
+            <td>24</td>
+
+            <td>11,148,217,076</td>
+            <td>554</td>
+            <td>24</td>
+
+          </tr>
+
+          <tr>
+            <th class="centered-header">29</th>
+
+
+            <td>12,052,161,352</td>
+            <td>538</td>
+            <td>22</td>
+
+            <td>7,500,063,349</td>
+            <td>529</td>
+            <td>15</td>
+
+            <td>10,672,013,792</td>
+            <td>570</td>
+            <td>25</td>
+
+            <td>13,400,930,267</td>
+            <td>552</td>
+            <td>28</td>
+
+          </tr>
+
+          <tr>
+            <th class="centered-header">30</th>
+
+
+            <td>13,252,213,343</td>
+            <td>553</td>
+            <td>25</td>
+
+            <td>5,641,951,857</td>
+            <td>561</td>
+            <td>11</td>
+
+            <td>9,895,807,201</td>
+            <td>558</td>
+            <td>22</td>
+
+            <td>13,614,439,724</td>
+            <td>837</td>
+            <td>32</td>
+
+          </tr>
+
+          <tr>
+            <th class="centered-header">31</th>
+
+
+            <td>15,810,046,404</td>
+            <td>539</td>
+            <td>30</td>
+
+            <td>11,782,392,658</td>
+            <td>556</td>
+            <td>24</td>
+
+            <td>9,156,805,095</td>
+            <td>552</td>
+            <td>21</td>
+
+            <td>9,661,974,067</td>
+            <td>559</td>
+            <td>23</td>
+
+          </tr>
+
+          <tr>
+            <th class="centered-header">32</th>
+
+
+            <td>10,263,480,269</td>
+            <td>550</td>
+            <td>20</td>
+
+            <td>12,172,529,174</td>
+            <td>548</td>
+            <td>25</td>
+
+            <td>14,474,515,938</td>
+            <td>563</td>
+            <td>33</td>
+
+            <td>10,863,527,470</td>
+            <td>601</td>
+            <td>26</td>
+
+          </tr>
+
+          <tr>
+            <th class="centered-header">33</th>
+
+
+            <td>15,680,277,909</td>
+            <td>542</td>
+            <td>29</td>
+
+            <td>10,169,535,287</td>
+            <td>542</td>
+            <td>21</td>
+
+            <td>9,418,857,935</td>
+            <td>553</td>
+            <td>22</td>
+
+            <td>9,875,812,479</td>
+            <td>579</td>
+            <td>24</td>
+
+          </tr>
+
+          <tr>
+            <th class="centered-header">34</th>
+
+
+            <td>8,610,992,542</td>
+            <td>540</td>
+            <td>17</td>
+
+            <td>6,155,052,249</td>
+            <td>558</td>
+            <td>12</td>
+
+            <td>11,520,516,256</td>
+            <td>557</td>
+            <td>26</td>
+
+            <td>12,203,805,559</td>
+            <td>835</td>
+            <td>30</td>
+
+          </tr>
+
+          <tr>
+            <th class="centered-header">35</th>
+
+
+            <td>9,303,963,430</td>
+            <td>552</td>
+            <td>18</td>
+
+            <td>11,224,412,667</td>
+            <td>538</td>
+            <td>23</td>
+
+            <td>6,545,830,950</td>
+            <td>548</td>
+            <td>15</td>
+
+            <td>14,508,838,330</td>
+            <td>546</td>
+            <td>33</td>
+
+          </tr>
+
+          <tr>
+            <th class="centered-header">36</th>
+
+
+            <td>8,666,368,290</td>
+            <td>537</td>
+            <td>17</td>
+
+            <td>9,844,520,843</td>
+            <td>564</td>
+            <td>22</td>
+
+            <td>11,000,446,081</td>
+            <td>591</td>
+            <td>25</td>
+
+            <td>11,324,816,209</td>
+            <td>840</td>
+            <td>27</td>
+
+          </tr>
+
+          <tr>
+            <th class="centered-header">37</th>
+
+
+            <td>14,032,988,895</td>
+            <td>539</td>
+            <td>26</td>
+
+            <td>12,475,395,402</td>
+            <td>566</td>
+            <td>28</td>
+
+            <td>10,046,952,063</td>
+            <td>549</td>
+            <td>22</td>
+
+            <td>10,347,262,897</td>
+            <td>567</td>
+            <td>24</td>
+
+          </tr>
+
+          <tr>
+            <th class="centered-header">38</th>
+
+
+            <td>8,932,317,198</td>
+            <td>525</td>
+            <td>16</td>
+
+            <td>12,440,062,470</td>
+            <td>545</td>
+            <td>27</td>
+
+            <td>10,295,750,668</td>
+            <td>542</td>
+            <td>23</td>
+
+            <td>7,883,948,746</td>
+            <td>579</td>
+            <td>19</td>
+
+          </tr>
+
+          <tr>
+            <th class="centered-header">39</th>
+
+
+            <td>9,364,082,345</td>
+            <td>549</td>
+            <td>19</td>
+
+            <td>9,709,299,950</td>
+            <td>541</td>
+            <td>22</td>
+
+            <td>13,616,481,358</td>
+            <td>563</td>
+            <td>33</td>
+
+            <td>10,554,396,558</td>
+            <td>544</td>
+            <td>24</td>
+
+          </tr>
+
+          <tr>
+            <th class="centered-header">40</th>
+
+
+            <td>13,601,577,911</td>
+            <td>545</td>
+            <td>27</td>
+
+            <td>13,779,570,214</td>
+            <td>535</td>
+            <td>30</td>
+
+            <td>6,889,619,445</td>
+            <td>827</td>
+            <td>17</td>
+
+            <td>14,788,264,853</td>
+            <td>535</td>
+            <td>35</td>
+
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>
