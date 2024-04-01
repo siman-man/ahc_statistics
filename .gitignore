@@ -5,3 +5,5 @@ html/
 *.txt
 *.json
 ranking.csv
+all_results.csv
+test_inputs.csv
