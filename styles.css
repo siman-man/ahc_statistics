@@ -52,6 +52,10 @@
   top: 8.5rem;
 }
 
+.sticky-table thead tr:nth-child(4) th {
+  top: 12.75rem;
+}
+
 .sticky-column {
   position: sticky;
   left: 0;
