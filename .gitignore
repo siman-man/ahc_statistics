@@ -2,6 +2,7 @@
 data/
 scores/
 html/
+output/
 *.txt
 *.json
 ranking.csv
