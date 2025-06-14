@@ -489,3 +489,9 @@ td.sticky-column a {
   color: #000000 !important;
   font-weight: bold;
 }
+
+/* Winner cells highlighting */
+.winner {
+  color: #FF4500 !important;
+  font-weight: bold !important;
+}
