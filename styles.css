@@ -1,27 +1,130 @@
+/* 全体的なスタイル */
+body {
+  background-color: #ffffff;
+  color: #333333;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* メインラッパー */
+.main-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  overflow: hidden;
+}
+
+/* タイトルスタイリング */
+h1 {
+  color: #333333;
+  margin: 0;
+  padding: 25px 20px;
+  text-align: center;
+  background-color: #f8f9fa;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  z-index: 50;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 2px solid #e9ecef;
+}
+
 /* テーブルのコンテナをスクロール可能にする */
 .table-container {
   overflow-x: auto;
+  overflow-y: auto;
   display: block;
   white-space: nowrap;
-  max-height: 95vh;
+  margin-top: 80px;
+  height: calc(100vh - 80px);
+  background-color: #f8f9fa;
+  padding: 0;
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.05);
+  position: relative;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  margin-left: 40px; /* コンテナ全体を右に移動 */
 }
+
+/* ヘッダー上部の強力なマスク */
+.header-mask {
+  position: fixed;
+  top: 80px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #f8f9fa;
+  z-index: 25;
+  pointer-events: none;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+/* 左側の強力なマスク */
+.left-mask {
+  position: fixed;
+  left: 0;
+  top: 80px;
+  width: 40px;
+  height: calc(100vh - 80px);
+  background: #f8f9fa;
+  z-index: 30;
+  pointer-events: none;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.05);
+}
+
+/* カスタムスクロールバー */
+.table-container::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+.table-container::-webkit-scrollbar-track {
+  background: #e9ecef;
+  border-radius: 6px;
+}
+
+.table-container::-webkit-scrollbar-thumb {
+  background: #adb5bd;
+  border-radius: 6px;
+}
+
+/* スクロールバーのホバー効果も削除 */
 
 /* テーブルの幅を固定 */
 .table-container table {
-  color: black;
-  width: 100%;
+  color: #333333;
+  width: auto;
   border-collapse: separate;
+  border-spacing: 0;
   position: relative;
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+  padding-bottom: 20px;
+  table-layout: fixed;
 }
 
 .centered-header {
   text-align: center;
+  font-weight: 600;
 }
 
 .table-container th,
 .table-container td {
-  border: 0.5px solid;
-  padding: 8px;
+  border: 1px solid #dee2e6;
+  padding: 10px 8px;
   width: 100px;
   height: 40px;
   overflow: hidden;
@@ -29,43 +132,314 @@
   white-space: nowrap;
 }
 
+/* 固定列の幅を明示的に設定 */
+.table-container th.sticky-column,
+.table-container td.sticky-column {
+  min-width: 180px;
+  max-width: 180px;
+  width: 180px;
+  position: -webkit-sticky !important;
+  position: sticky !important;
+  left: 0 !important;
+}
+
+/* ユーザー名セルの左寄せ用パディング */
+.table-container td.sticky-column {
+  padding-left: 8px !important; /* 通常のpadding値 */
+}
+
+.table-container th.sticky-column-2,
+.table-container td.sticky-column-2 {
+  min-width: 60px;
+  max-width: 60px;
+  width: 60px;
+}
+
 .table-container td {
   text-align: right;
+  font-family: 'SF Mono', 'Monaco', 'Consolas', 'Courier New', monospace;
+  background-color: #ffffff;
 }
 
+/* ゼブラストライプ効果 */
+.table-container tbody tr:nth-child(odd) td {
+  background-color: #f8f9fa;
+}
+
+.table-container tbody tr:nth-child(even) td {
+  background-color: #ffffff;
+}
+
+/* 固定列のゼブラストライプを上書き */
+.table-container tbody tr:nth-child(odd) td.sticky-column {
+  background-color: #f8f9fa;
+}
+
+.table-container tbody tr:nth-child(even) td.sticky-column {
+  background-color: #ffffff;
+}
+
+.table-container tbody tr:nth-child(odd) td.sticky-column-2 {
+  background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+}
+
+.table-container tbody tr:nth-child(even) td.sticky-column-2 {
+  background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+}
+
+/* ゼブラストライプ時も左側マスクを維持 */
+.table-container tbody tr:nth-child(odd) td.sticky-column::before {
+  display: none;
+}
+
+.table-container tbody tr:nth-child(even) td.sticky-column::before {
+  display: none;
+}
+
+.table-container tbody tr:nth-child(odd) td.sticky-column-2::before {
+  display: none;
+}
+
+.table-container tbody tr:nth-child(even) td.sticky-column-2::before {
+  display: none;
+}
+
+/* ホバー効果 - 削除（パフォーマンス問題のため） */
+
+/* ヘッダーのスタイリング */
 .sticky-table thead th {
+  position: -webkit-sticky;
   position: sticky;
-  top: 0rem;
-  z-index: 1;
-  background-color: white;
+  top: 0;
+  z-index: 10;
+  background: linear-gradient(135deg, #2196f3 0%, #1976d2 100%);
+  color: #ffffff;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
+/* ヘッダー背景の補強 */
+.sticky-table thead {
+  background-color: #f8f9fa;
+}
+
+/* 各ヘッダー行の位置調整 */
 .sticky-table thead tr:nth-child(1) th {
-  top: 0rem;
+  top: 0;
+  background: linear-gradient(135deg, #2196f3 0%, #1976d2 100%);
 }
 
 .sticky-table thead tr:nth-child(2) th {
-  top: 4.25rem;
+  top: 4.4rem;
+  background: linear-gradient(135deg, #1e88e5 0%, #1565c0 100%);
 }
 
 .sticky-table thead tr:nth-child(3) th {
-  top: 8.5rem;
+  top: 8.8rem;
+  background: linear-gradient(135deg, #1976d2 0%, #1565c0 100%);
 }
 
 .sticky-table thead tr:nth-child(4) th {
-  top: 12.75rem;
+  top: 13.2rem;
+  background: linear-gradient(135deg, #1565c0 0%, #0d47a1 100%);
 }
 
+
+/* 固定列のスタイリング */
 .sticky-column {
-  position: sticky;
-  left: 0;
-  background-color: white;
+  position: -webkit-sticky !important;
+  position: sticky !important;
+  left: 0px !important;
+  background-color: #ffffff;
+  color: #333333;
+  font-weight: 600;
+  z-index: 15;
+  margin-left: 0 !important;
+}
+
+/* USER ヘッダーのセンター揃え */
+th.sticky-column.centered-header {
+  text-align: center !important;
+  padding-left: 8px !important; /* 通常のpadding値に戻す */
+}
+
+/* ヘッダーの固定列は青色を維持 */
+thead th.sticky-column {
+  background: linear-gradient(135deg, #2196f3 0%, #1976d2 100%);
+  color: #ffffff;
+}
+
+/* 2番目の固定列（Rank列） */
+.sticky-column-2 {
+  position: -webkit-sticky !important;
+  position: sticky !important;
+  left: 180px !important; /* USER列の幅 */
+  background: linear-gradient(135deg, #2196f3 0%, #1976d2 100%);
+  color: #ffffff;
+  font-weight: 600;
+  z-index: 14;
+}
+
+/* 固定列の左側マスク */
+.sticky-column::before {
+  display: none;
 }
 
 td.sticky-column {
+  position: -webkit-sticky !important;
+  position: sticky !important;
+  left: 0px !important;
   text-align: left;
+  background-color: #ffffff;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  margin-left: 0 !important;
 }
 
-.sticky-table thead tr:first-child th:first-child {
-  z-index: 2;
+td.sticky-column-2 {
+  position: -webkit-sticky !important;
+  position: sticky !important;
+  left: 180px !important;
+  text-align: right;
+  background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+  font-family: 'SF Mono', 'Monaco', 'Consolas', 'Courier New', monospace;
+  font-weight: bold;
+  color: #333333;
 }
+
+/* tdの固定列の左側マスク */
+td.sticky-column::before {
+  display: none;
+}
+
+/* ユーザー名リンクのスタイリング */
+td.sticky-column a {
+  color: #1976d2;
+  text-decoration: none;
+}
+
+/* リンクのホバー効果も削除 */
+
+/* 左上角のセル（最も重要な固定セル） */
+.sticky-table thead tr:first-child th:first-child {
+  position: -webkit-sticky !important;
+  position: sticky !important;
+  z-index: 20;
+  background: linear-gradient(135deg, #2196f3 0%, #1565c0 100%);
+  left: 0px !important;
+  top: 0 !important;
+  margin-left: 0 !important;
+}
+
+/* 2番目のヘッダー固定セル */
+.sticky-table thead tr th:nth-child(2).sticky-column-2 {
+  position: -webkit-sticky !important;
+  position: sticky !important;
+  z-index: 20;
+  background: linear-gradient(135deg, #2196f3 0%, #1565c0 100%);
+  left: 180px !important;
+}
+
+/* ランクセルの特別なスタイリング */
+.table-container tbody td:nth-child(2) {
+  font-weight: bold;
+  color: #333333;
+}
+
+/* スコアセルの強調 */
+.table-container tbody td:nth-child(3) {
+  font-weight: 600;
+  color: #1976d2;
+}
+
+/* レスポンシブ調整 */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.2rem;
+    padding: 15px 10px;
+    height: 60px;
+  }
+  
+  .table-container {
+    margin-top: 60px;
+    height: calc(100vh - 60px);
+  }
+  
+  .table-container th,
+  .table-container td {
+    padding: 6px 4px;
+    font-size: 12px;
+  }
+  
+  .left-mask {
+    top: 60px;
+    height: calc(100vh - 60px);
+    width: 40px;
+  }
+  
+  .header-mask {
+    top: 60px;
+  }
+}
+
+/* アニメーション効果 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.table-container table {
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* カラーアクセント（特定の値に応じて） */
+.highlight-best {
+  color: #2e7d32 !important;
+  font-weight: bold;
+}
+
+.highlight-worst {
+  color: #d32f2f !important;
+}
+
+/* DIFF値の色分け */
+.positive {
+  color: #00c853 !important;
+  font-weight: 600;
+}
+
+.negative {
+  color: #ff1744 !important;
+  font-weight: 600;
+}
+
+/* ツールチップ用（将来の拡張用） */
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #616161;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 100;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+}
+
+/* ツールチップのホバー効果も削除 */
