@@ -443,3 +443,49 @@ td.sticky-column a {
 }
 
 /* ツールチップのホバー効果も削除 */
+
+/* AtCoder Rating Colors */
+.red {
+  color: #FF0000 !important;
+  font-weight: bold;
+}
+
+.orange {
+  color: #FF8000 !important;
+  font-weight: bold;
+}
+
+.yellow {
+  color: #C0C000 !important;
+  font-weight: bold;
+}
+
+.blue {
+  color: #0000FF !important;
+  font-weight: bold;
+}
+
+.cyan {
+  color: #00C0C0 !important;
+  font-weight: bold;
+}
+
+.green {
+  color: #008000 !important;
+  font-weight: bold;
+}
+
+.brown {
+  color: #804000 !important;
+  font-weight: bold;
+}
+
+.gray {
+  color: #808080 !important;
+  font-weight: bold;
+}
+
+.black {
+  color: #000000 !important;
+  font-weight: bold;
+}
