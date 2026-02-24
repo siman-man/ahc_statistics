@@ -3,6 +3,9 @@ data/
 scores/
 html/
 output/
+in/
+scripts/
+src/
 *.txt
 *.json
 ranking.csv
