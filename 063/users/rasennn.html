@@ -1,0 +1,265 @@
+<!doctype html>
+<html>
+<head>
+  <title>rasennn - AHC063 Statistics</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css">
+  <style>
+    body {
+      background-color: #f8f9fa;
+      color: #333;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .back-link {
+      display: inline-block;
+      margin-bottom: 16px;
+      color: #1976d2;
+      text-decoration: none;
+      font-size: 14px;
+    }
+    .back-link:hover { text-decoration: underline; }
+    .user-header {
+      background: #fff;
+      border-radius: 8px;
+      padding: 24px;
+      margin-bottom: 24px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    }
+    .user-header h1 {
+      margin: 0 0 12px 0;
+      font-size: 28px;
+    }
+    .user-header .username {
+      color: inherit;
+      font-weight: bold;
+    }
+    .stats {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .stat-item {
+      font-size: 14px;
+      color: #666;
+    }
+    .stat-item .value {
+      font-size: 20px;
+      font-weight: 700;
+      color: #333;
+      font-family: 'SF Mono', 'Monaco', 'Consolas', monospace;
+    }
+    .heatmap-section {
+      background: #fff;
+      border-radius: 8px;
+      padding: 24px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    }
+    .heatmap-section h2 {
+      margin: 0 0 16px 0;
+      font-size: 18px;
+      color: #333;
+    }
+    .heatmap-wrapper {
+      overflow-x: auto;
+    }
+    .heatmap {
+      border-collapse: collapse;
+      width: 100%;
+      min-width: 900px;
+    }
+    .heatmap th {
+      background: #2196f3;
+      color: #fff;
+      padding: 8px 4px;
+      text-align: center;
+      font-size: 13px;
+      font-weight: 600;
+      border: 1px solid #1976d2;
+    }
+    .heatmap td {
+      padding: 8px 4px;
+      text-align: center;
+      border: 1px solid #dee2e6;
+      vertical-align: middle;
+    }
+    .cell-score {
+      font-family: 'SF Mono', 'Monaco', 'Consolas', monospace;
+      font-size: 11px;
+      font-weight: 600;
+      color: #333;
+      white-space: nowrap;
+    }
+    .cell-rank {
+      font-size: 14px;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin: 2px 0;
+    }
+    .cell-cases {
+      font-size: 10px;
+      color: #999;
+    }
+    .legend {
+      margin-top: 16px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      font-size: 13px;
+      color: #666;
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .legend-color {
+      width: 20px;
+      height: 14px;
+      border-radius: 2px;
+      border: 1px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <a href="../index.html" class="back-link">&larr; Back to Standings</a>
+
+    <div class="user-header">
+      <h1>
+        <a href="https://atcoder.jp/users/rasennn?contestType=heuristic" style="text-decoration:none;">
+          <span class="username blue">rasennn</span>
+        </a>
+      </h1>
+      <div class="stats">
+        <div class="stat-item">
+          Rank<br><span class="value">#546</span>
+        </div>
+        <div class="stat-item">
+          Score<br><span class="value">1,117,246,044,295</span>
+        </div>
+        <div class="stat-item">
+          Bests<br><span class="value">1</span>
+        </div>
+        <div class="stat-item">
+          Uniqs<br><span class="value">0</span>
+        </div>
+        <div class="stat-item">
+          Fails<br><span class="value">0</span>
+        </div>
+        <div class="stat-item">
+          Not Perfect<br><span class="value">1940</span>
+        </div>
+        <div class="stat-item">
+          Provisional Rank<br><span class="value">#550</span>
+        </div>
+        <div class="stat-item">
+          Diff<br><span class="value" style="color: #4caf50;">+4</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="heatmap-section">
+      <h2>Score Heatmap by N / M&#247;N&#178;</h2>
+      <p style="font-size:13px; color:#888; margin:0 0 12px 0;">
+        Green = category rank better than overall rank (#546), Red = worse
+      </p>
+<div class="heatmap-wrapper">
+<table class="heatmap">
+  <thead>
+    <tr>
+      <th>M&#247;N&#178; \ N</th>
+      <th>N=8</th>
+      <th>N=9</th>
+      <th>N=10</th>
+      <th>N=11</th>
+      <th>N=12</th>
+      <th>N=13</th>
+      <th>N=14</th>
+      <th>N=15</th>
+      <th>N=16</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>[0.25, 0.35)</th>
+      <td style="background-color: #ffffff;"><div class="cell-score">21,728,639,240</div><div class="cell-rank">#540</div><div class="cell-cases">(38 cases)</div></td>
+      <td style="background-color: #ffffff;"><div class="cell-score">27,426,424,053</div><div class="cell-rank">#553</div><div class="cell-cases">(48 cases)</div></td>
+      <td style="background-color: #ffffff;"><div class="cell-score">24,521,756,330</div><div class="cell-rank">#553</div><div class="cell-cases">(43 cases)</div></td>
+      <td style="background-color: #ffffff;"><div class="cell-score">24,891,218,357</div><div class="cell-rank">#552</div><div class="cell-cases">(44 cases)</div></td>
+      <td style="background-color: #ffffff;"><div class="cell-score">21,920,094,938</div><div class="cell-rank">#537</div><div class="cell-cases">(38 cases)</div></td>
+      <td style="background-color: hsl(130, 55%, 94%);"><div class="cell-score">31,791,930,384</div><div class="cell-rank">#520</div><div class="cell-cases">(54 cases)</div></td>
+      <td style="background-color: hsl(130, 55%, 94%);"><div class="cell-score">32,361,550,628</div><div class="cell-rank">#521</div><div class="cell-cases">(55 cases)</div></td>
+      <td style="background-color: hsl(130, 55%, 94%);"><div class="cell-score">26,690,268,986</div><div class="cell-rank">#514</div><div class="cell-cases">(45 cases)</div></td>
+      <td style="background-color: hsl(130, 55%, 93%);"><div class="cell-score">23,529,272,151</div><div class="cell-rank">#495</div><div class="cell-cases">(39 cases)</div></td>
+    </tr>
+    <tr>
+      <th>[0.35, 0.45)</th>
+      <td style="background-color: hsl(0, 65%, 94%);"><div class="cell-score">20,651,898,732</div><div class="cell-rank">#576</div><div class="cell-cases">(38 cases)</div></td>
+      <td style="background-color: hsl(0, 65%, 95%);"><div class="cell-score">24,924,050,635</div><div class="cell-rank">#557</div><div class="cell-cases">(45 cases)</div></td>
+      <td style="background-color: #ffffff;"><div class="cell-score">16,189,477,848</div><div class="cell-rank">#553</div><div class="cell-cases">(29 cases)</div></td>
+      <td style="background-color: hsl(130, 55%, 94%);"><div class="cell-score">26,439,873,416</div><div class="cell-rank">#529</div><div class="cell-cases">(46 cases)</div></td>
+      <td style="background-color: hsl(130, 55%, 94%);"><div class="cell-score">19,137,262,658</div><div class="cell-rank">#526</div><div class="cell-cases">(33 cases)</div></td>
+      <td style="background-color: hsl(130, 55%, 94%);"><div class="cell-score">30,126,582,277</div><div class="cell-rank">#517</div><div class="cell-cases">(51 cases)</div></td>
+      <td style="background-color: hsl(130, 55%, 93%);"><div class="cell-score">30,494,462,026</div><div class="cell-rank">#505</div><div class="cell-cases">(51 cases)</div></td>
+      <td style="background-color: hsl(130, 55%, 93%);"><div class="cell-score">22,734,968,355</div><div class="cell-rank">#503</div><div class="cell-cases">(38 cases)</div></td>
+      <td style="background-color: hsl(130, 55%, 93%);"><div class="cell-score">20,655,854,428</div><div class="cell-rank">#508</div><div class="cell-cases">(35 cases)</div></td>
+    </tr>
+    <tr>
+      <th>[0.45, 0.55)</th>
+      <td style="background-color: hsl(0, 65%, 94%);"><div class="cell-score">29,085,047,470</div><div class="cell-rank">#561</div><div class="cell-cases">(53 cases)</div></td>
+      <td style="background-color: #ffffff;"><div class="cell-score">22,031,250,001</div><div class="cell-rank">#543</div><div class="cell-cases">(39 cases)</div></td>
+      <td style="background-color: #ffffff;"><div class="cell-score">23,722,705,697</div><div class="cell-rank">#540</div><div class="cell-cases">(42 cases)</div></td>
+      <td style="background-color: hsl(130, 55%, 94%);"><div class="cell-score">28,411,392,408</div><div class="cell-rank">#522</div><div class="cell-cases">(49 cases)</div></td>
+      <td style="background-color: hsl(130, 55%, 94%);"><div class="cell-score">26,935,917,722</div><div class="cell-rank">#517</div><div class="cell-cases">(46 cases)</div></td>
+      <td style="background-color: hsl(130, 55%, 93%);"><div class="cell-score">31,348,101,265</div><div class="cell-rank">#507</div><div class="cell-cases">(53 cases)</div></td>
+      <td style="background-color: hsl(130, 55%, 94%);"><div class="cell-score">29,250,791,141</div><div class="cell-rank">#534</div><div class="cell-cases">(51 cases)</div></td>
+      <td style="background-color: #ffffff;"><div class="cell-score">21,655,458,863</div><div class="cell-rank">#547</div><div class="cell-cases">(39 cases)</div></td>
+      <td style="background-color: #ffffff;"><div class="cell-score">24,234,177,215</div><div class="cell-rank">#556</div><div class="cell-cases">(45 cases)</div></td>
+    </tr>
+    <tr>
+      <th>[0.55, 0.65)</th>
+      <td style="background-color: #ffffff;"><div class="cell-score">25,053,797,468</div><div class="cell-rank">#550</div><div class="cell-cases">(45 cases)</div></td>
+      <td style="background-color: hsl(130, 55%, 94%);"><div class="cell-score">23,488,132,908</div><div class="cell-rank">#532</div><div class="cell-cases">(41 cases)</div></td>
+      <td style="background-color: hsl(130, 55%, 94%);"><div class="cell-score">31,783,227,846</div><div class="cell-rank">#528</div><div class="cell-cases">(55 cases)</div></td>
+      <td style="background-color: hsl(130, 55%, 94%);"><div class="cell-score">23,746,835,438</div><div class="cell-rank">#529</div><div class="cell-cases">(41 cases)</div></td>
+      <td style="background-color: #ffffff;"><div class="cell-score">25,337,025,316</div><div class="cell-rank">#540</div><div class="cell-cases">(44 cases)</div></td>
+      <td style="background-color: hsl(130, 55%, 94%);"><div class="cell-score">18,274,525,319</div><div class="cell-rank">#527</div><div class="cell-cases">(32 cases)</div></td>
+      <td style="background-color: hsl(0, 65%, 94%);"><div class="cell-score">19,063,291,138</div><div class="cell-rank">#567</div><div class="cell-cases">(36 cases)</div></td>
+      <td style="background-color: hsl(0, 65%, 93%);"><div class="cell-score">25,772,547,467</div><div class="cell-rank">#583</div><div class="cell-cases">(51 cases)</div></td>
+      <td style="background-color: hsl(0, 65%, 93%);"><div class="cell-score">20,247,231,014</div><div class="cell-rank">#601</div><div class="cell-cases">(43 cases)</div></td>
+    </tr>
+    <tr>
+      <th>[0.65, 0.75]</th>
+      <td style="background-color: #ffffff;"><div class="cell-score">27,441,455,696</div><div class="cell-rank">#537</div><div class="cell-cases">(48 cases)</div></td>
+      <td style="background-color: hsl(130, 55%, 94%);"><div class="cell-score">26,173,259,495</div><div class="cell-rank">#523</div><div class="cell-cases">(45 cases)</div></td>
+      <td style="background-color: hsl(130, 55%, 94%);"><div class="cell-score">20,991,297,469</div><div class="cell-rank">#522</div><div class="cell-cases">(36 cases)</div></td>
+      <td style="background-color: hsl(130, 55%, 94%);"><div class="cell-score">26,320,806,959</div><div class="cell-rank">#533</div><div class="cell-cases">(46 cases)</div></td>
+      <td style="background-color: hsl(0, 65%, 94%);"><div class="cell-score">22,495,253,163</div><div class="cell-rank">#561</div><div class="cell-cases">(41 cases)</div></td>
+      <td style="background-color: hsl(0, 65%, 93%);"><div class="cell-score">21,648,338,608</div><div class="cell-rank">#584</div><div class="cell-cases">(43 cases)</div></td>
+      <td style="background-color: hsl(0, 65%, 93%);"><div class="cell-score">26,244,462,024</div><div class="cell-rank">#602</div><div class="cell-cases">(56 cases)</div></td>
+      <td style="background-color: hsl(0, 65%, 93%);"><div class="cell-score">25,372,231,010</div><div class="cell-rank">#598</div><div class="cell-cases">(55 cases)</div></td>
+      <td style="background-color: hsl(0, 65%, 92%);"><div class="cell-score">24,901,898,733</div><div class="cell-rank">#610</div><div class="cell-cases">(55 cases)</div></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+      <div class="legend">
+        <div class="legend-item">
+          <div class="legend-color" style="background: hsl(130, 55%, 75%);"></div> Better
+        </div>
+        <div class="legend-item">
+          <div class="legend-color" style="background: #ffffff;"></div> Neutral
+        </div>
+        <div class="legend-item">
+          <div class="legend-color" style="background: hsl(0, 65%, 78%);"></div> Worse
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
